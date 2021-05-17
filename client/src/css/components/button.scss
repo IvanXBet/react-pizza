@@ -353,6 +353,7 @@
         background-color: #fff;
         border: 1px solid $orange;
         color: $orange;
+        font-size: 15px;
     }
 
     &_ready {
@@ -366,6 +367,13 @@
             background-color: white;
             color: #282828;
         }
-        
+    }
+    &_inputProfil {
+        border: 0;
+        margin-top: 45px;
+        width: 160px;
+        height: 40px;
+        color: white;
+        font-size: 15px;
     }
 }

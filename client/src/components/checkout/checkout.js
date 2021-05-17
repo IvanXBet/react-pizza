@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Redirect, Link} from 'react-router-dom';
-import CheckoutPage from '../pages/CheckoutPage';
 import CheckoutItem from '../checkoutItem/checkoutItem';
 import {readyOrder} from '../../actions';
 import backIcon from '../../assets/img/cart-icon-back.svg';

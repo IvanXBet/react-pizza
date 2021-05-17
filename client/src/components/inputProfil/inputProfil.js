@@ -1,17 +1,18 @@
-import {useStatr} from 'react';
+import {useState, useEffect} from 'react';
 
 
+const InputProfil = ({label, input, setInput}) => {
 
-const InputProfil = ({label, input}) => {
-
+    
+    
 
     return(
         <div className='inputProfil'> 
             <label>{label}</label>
             <div className='inputProfil__input'>
-                <input readonly value={input}></input> 
-                <div className='inputProfil__change'>Изменить</div>
+                <input onChange={e => setInput(e.target.value)} value={input}></input> 
             </div>
+
         </div>
     )
 }

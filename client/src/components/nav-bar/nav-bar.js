@@ -26,9 +26,9 @@ const NavBar = () =>  {
                         <div className='navbar__items'>
                             
                             <ul className='navbar__menu'>
-                                <div className={logoClass}>
+                                <Link to={'/'} className={logoClass}>
                                     <img width="40" src={logoSvg} alt="Pizza logo"/>
-                                </div>
+                                </Link>
                                 <li className='navbar__item'> 
                                     <Link to={'/'}> <i class="fas fa-pizza-slice"></i> Пицца </Link>
                                 </li>

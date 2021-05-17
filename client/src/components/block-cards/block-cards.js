@@ -62,7 +62,7 @@ class BlockCards extends Component  {
 
         const spinner = loading ? <Spinner/> : null;
         const errorMenu = error ? <Error/> : null;
-        const content = !(loading || error) ? <View newItemOrder={this.newItemOrder} newQuantityInOrder={this.newQuantityInOrder} changeQuantityInOrder={this.changeQuantityInOrder} filterItems = {filterItems}/> : null;
+        const content = !(loading || error) ? <View newItemOrder={this.newItemOrder}  changeQuantityInOrder={this.changeQuantityInOrder} filterItems = {filterItems}/> : null;
         
         return (
             <div className="content">
@@ -74,7 +74,7 @@ class BlockCards extends Component  {
     }
 }
 
-const View = ({filterItems, newItemOrder, newQuantityInOrder, changeQuantityInOrder}) => {
+const View = ({filterItems, newItemOrder, changeQuantityInOrder}) => {
     
     return (
         <>
@@ -83,7 +83,7 @@ const View = ({filterItems, newItemOrder, newQuantityInOrder, changeQuantityInOr
                 <div className='content__cards'>
                     {
                         filterItems.map(menuItem => {
-                            return <Card key={menuItem.id} changeQuantityInOrder= {changeQuantityInOrder} newItemOrder={newItemOrder} newQuantityInOrder={newQuantityInOrder}  menuItem = {menuItem}/>
+                            return <Card key={menuItem.id} changeQuantityInOrder= {changeQuantityInOrder} newItemOrder={newItemOrder}  menuItem = {menuItem}/>
                         })
                     }
                 </div>
