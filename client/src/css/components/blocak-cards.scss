@@ -1,0 +1,26 @@
+.content{
+    width: 100%;
+    background-color: $background;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.03);
+    border-radius: 0 0 10px 10px;
+    padding-bottom: 80px;
+    &__items {
+        margin: 0px auto;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    &__cards {
+        // display: grid;
+        // grid-template: repeat(5, 460px) / repeat(5, 280px);
+        // gap: 65px 3.5em;  
+        // grid-auto-rows: 460px;
+        // grid-auto-columns: 280px;
+        display: flex;
+        flex: 0 1 auto;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding-top: 50px;
+    }
+}

@@ -1,0 +1,39 @@
+.inputProfil {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    &__input {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 370px;
+    }
+    &__change {
+        color: $orange;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    label {
+        width: 190px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 0.01em;
+    }
+    input {
+        width: 270px;
+        height: 40px;
+        background: #C4C4C4;
+        border-radius: 5px;
+        border: 0px;
+        padding-left: 10px;
+        font-size: 15px;
+        margin-top: 5px;
+        :focus {
+            background: #C4C4C4;
+            border: 1px solid $orange;
+        }
+    }
+
+}

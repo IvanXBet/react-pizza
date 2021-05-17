@@ -1,0 +1,24 @@
+.filter {
+    box-sizing: border-box;
+    background-color: $background;
+    padding-top: 25px;
+    
+    &__buttons {
+        margin: 0 auto;
+        min-height: 46px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__title {
+        margin-top: 32px;
+
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 39px;
+
+        letter-spacing: 0.01em;
+
+        color: #000000;
+    }
+}

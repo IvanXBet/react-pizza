@@ -1,0 +1,32 @@
+@keyframes beat {
+    form {
+        
+        transform: scale(1);
+            
+    }
+    50% {
+        
+        transform: scale(1.2);
+             
+    }
+    to {
+        
+        transform: scale(1);
+        
+    }
+}
+
+@keyframes onClickAdd  {
+    from {
+        border: 1px solid #fff;
+        
+    }
+    50% {
+        border: 9px solid #fff;
+        
+    }
+    to {
+        border: 1px solid #fff;
+        
+    }
+}

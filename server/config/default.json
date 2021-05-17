@@ -1,0 +1,5 @@
+{
+    "serverPort" : 5000,
+    "jwtSecret" : "daler puska",
+    "dbURL" : "mongodb+srv://Ivan:a26sd@cluster0.nipao.mongodb.net/PizzaDB?retryWrites=true&w=majority"
+}

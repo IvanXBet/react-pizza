@@ -1,0 +1,58 @@
+
+@import './container';
+@import 'variables';
+@import 'animation';
+
+
+//delivery
+@import './components/delivery.scss';
+
+
+//header
+@import './components/header.scss';
+@import './components/header-cart.scss';
+@import './components/logo-header.scss';
+@import './components/header-guide.scss';
+
+//button
+@import './components/button.scss';
+
+
+//card
+@import './components/blocak-cards.scss';
+@import './components/card.scss';
+
+
+//cart
+@import './components/cart.scss';
+@import './components/cart-block.scss';
+@import './components/cart-item.scss';
+@import './components/cart-no-order.scss';
+
+//checkout
+@import './components//checkout.scss';
+@import './components/checkoutItem.scss';
+
+//profil
+@import './components/profil.scss';
+@import './components/orderItemProfil.scss';
+@import './components/inputProfil.scss';
+
+//ready
+@import './components/ready.scss';
+
+
+//filter
+@import './components/filter.scss';
+
+//nav bar
+@import './components/nav-bar.scss';
+
+@import './components/error.scss';
+@import './components/spinner.css';
+
+@import './components/modal.scss';
+@import './components/modalInput.scss';
+@import './components/modalRegist.scss';
+
+@import './media';

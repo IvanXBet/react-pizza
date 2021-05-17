@@ -1,0 +1,31 @@
+.ready {
+    margin: 0 auto;
+    padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 39px;
+
+        letter-spacing: 0.01em;
+        text-align: center;
+        color: #000000;
+    }
+    &__text {
+        margin-top: 20px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 145.4%;
+        /* or 26px */
+
+        text-align: center;
+        letter-spacing: 0.01em;
+
+        color: #777777;
+    }
+}

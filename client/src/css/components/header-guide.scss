@@ -1,0 +1,42 @@
+.guide {
+    width: 400px;
+    height: 55px;
+    margin-right: 40px;
+    display: flex;
+    justify-content: space-between;
+    
+    &__item{
+        height: 100%;
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__circle {
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
+        border: $orange solid 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+    }
+    &__text {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 14px;
+        color: #000000;
+    }
+    &__line {
+        width: 80px;
+        height: 0px;
+        border-bottom: 2px dashed $orange;
+        margin-top: 18px;
+    }
+    &__lineDone {
+        border-bottom: 2px solid $orange;
+    }
+}
