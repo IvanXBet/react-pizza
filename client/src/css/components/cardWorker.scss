@@ -7,11 +7,17 @@
     border-radius: 30px;
     background: #dedede;
     &__buttons {
-        margin-top: 15px;
+        margin-top: 10px;
         display: flex;
         justify-content: space-between;
     }
     &__dop {
+        margin-top: 10px;
+    }
+    &__adres {
         margin-top: 15px;
+    }
+    &__date {
+        margin-top: 10px;
     }
 }

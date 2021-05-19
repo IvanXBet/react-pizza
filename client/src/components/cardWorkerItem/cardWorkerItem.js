@@ -2,11 +2,14 @@ import React, {Component} from 'react';
 
 class CardWorkerItem extends Component {
     render() {
+        const {orderItem} = this.props
         return(
             <div className='cardWorkerItem'>
-                <div className='cardWorkerItem__name'>{'Чизбургер-пицца'}</div>
-                <div className='cardWorkerItem__dough'>Тесто: {'тонкое'}</div>
-                <div className='cardWorkerItem__diameter'>{'26 см'}</div>
+                
+                <div className='cardWorkerItem__name'>{orderItem.title}</div>
+                <div className='cardWorkerItem__dough'>Тесто: {orderItem.activeDough}</div>
+                <div className='cardWorkerItem__diameter'>Диаметр: {orderItem.activeDiameter}</div>
+                <div className='cardWorkerItem__diameter'>Количество: {orderItem.quantity}</div>
             </div>
         )
     }

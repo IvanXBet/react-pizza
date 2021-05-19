@@ -55,5 +55,25 @@ router.get('/allOrders', async(req, res) => {
     } 
 })
 
+router.get('/changestatus', async(req, res) => {
+    try {
+        const {_id, status} = req.body;
+        consol.log(req.body)
+        const result = await Order.updateMany(
+            {   
+                '_id': id,
+                    
+            },
+            {
+                'status': status,
+            }    
+        )
+        res.status(200).json({message: result});
+
+    }catch (e) {
+        res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
+    } 
+})
+
 
 module.exports = router

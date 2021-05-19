@@ -104,7 +104,6 @@ class Profil extends Component {
         
         await User.changeUserProfil(this.state.user)
         .then(res => {
-            console.log(res)
             if(res.status === 400) {
                 this.message(res.message)  
                 

@@ -376,4 +376,14 @@
         color: white;
         font-size: 15px;
     }
+    &_delivered {
+        height: 40px;
+        width: 200px;
+        background-color: #EDE522;
+    }
+    &_completed {
+        height: 40px;
+        width: 200px;
+        background-color: #1CBC19;
+    }
 }

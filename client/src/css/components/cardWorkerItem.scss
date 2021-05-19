@@ -4,4 +4,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid $orange;
+    &:first-child {
+        border-top: 1px solid $orange;
+    }
 }
