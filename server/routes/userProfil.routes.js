@@ -18,7 +18,9 @@ router.post('/userprofil', async (req, res) => {
 
 })
 
-router.post('/updateProfil',
+router.post('/updateProfil',[
+        check('email', 'Некорректный email').isEmail(),
+    ],
     async (req, res) => {
     try{
 
@@ -35,7 +37,11 @@ router.post('/updateProfil',
         const data = req.body;
         const {_id, name, email, phone} = data;
 
-        
+        const candidate = await User.findOne({ email })
+
+		if (candidate) {
+			return res.status(400).json({ message: 'С такой почтой уже создан аккаунт', status: 400 })
+		}
 
 
         const result = await User.updateMany(
@@ -51,7 +57,16 @@ router.post('/updateProfil',
         )
         res.status(200).json({message: result});
     }catch(e){
-        res.status(400).json({message: 'Ошибка, попробуйте позже'})
+        res.status(400).json({message: 'Ошибка, попробуйте позже', status: 400})
+    }
+})
+
+router.post('/delitOrder', async (req, res) => {
+    try {
+        const result = await Order.deleteOne({_id: req.body.orderId})
+        res.status(200).json({message: result})
+    } catch (e) {
+        res.status(400).json({message: 'Ошибка отмены заказа'})
     }
 })
 

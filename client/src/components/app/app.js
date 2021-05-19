@@ -4,12 +4,15 @@ import CartPage from '../pages/CartPage';
 import ProfilPage from '../pages/ProfilPage';
 import CheckoutPage from '../pages/CheckoutPage';
 import ReadyPage from '../pages/ReadyPage';
+import AdminPage from '../pages/AdminPage';
+import WorkerPage from '../pages/WorkerPage';
 import {Switch, Route} from 'react-router-dom';
 import { useDispatch, useSelector, connect } from 'react-redux';
 import {useRealodOrder} from '../../hooks/relodOrder.hook';
 import {reloadOrder} from '../../actions/index';
 
 import '../../css/app.scss';
+
 
 class App extends Component {
 
@@ -64,6 +67,8 @@ class App extends Component {
 						{profilContent}
 						<Route path='/checkout' exact><CheckoutPage/></Route>
 						<Route path='/ready' exact><ReadyPage/></Route>
+						<Route path='/admin' exact> <AdminPage/> </Route>
+						<Route path='/worker' exact> <WorkerPage/> </Route>
 						<Route exact><MainPage/></Route>
 					</Switch>
 				</div>

@@ -32,11 +32,15 @@ const Header = ({authButton, positon}) => {
    
     
 
-    useEffect(() => {
+     useEffect( async () =>  {
         
-        const auth = JSON.parse(localStorage.getItem('userData'))
+        let auth = JSON.parse(localStorage.getItem('userData'))
+        let strName = []
         if(auth != null && auth.auth) {
+
+            strName = auth.userName.split(' ')
             
+            await (auth = {...auth, userName: strName[0]})
             setUser(auth)
 
         }

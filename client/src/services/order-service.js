@@ -15,4 +15,17 @@ export default class PizzaServis {
         return result;
         
     }
+    getAllOrders = async () => {
+        const response = await fetch('/api/data/allOrders', {
+            mode: 'no-cors',
+            method: "GET",
+            headers: {
+                 "Content-Type": "application/json",
+                 "Access-Control-Allow-Origin": "*"
+            }
+        })
+        
+        const result = await response.json();
+        return result;
+    }
 }

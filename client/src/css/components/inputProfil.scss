@@ -24,15 +24,14 @@
     input {
         width: 270px;
         height: 40px;
-        background: #C4C4C4;
+        background: #dedede;
         border-radius: 5px;
         border: 0px;
         padding-left: 10px;
         font-size: 15px;
         margin-top: 5px;
-        :focus {
+        &:focus {
             background: #C4C4C4;
-            border: 1px solid $orange;
         }
     }
 

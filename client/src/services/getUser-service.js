@@ -29,4 +29,17 @@ export default class PizzaServis {
         const result = await response.json();
         return result;
     }
+
+    delitOrder = async (id) => {
+        const response = await fetch('/api/data/delitOrder', {
+            method: 'POST',
+            body: JSON.stringify(id),
+            headers: {
+                 "Content-Type": "application/json;charset=utf-8",
+                 "Access-Control-Allow-Origin": "*"
+            }
+        })
+        const result = await response.json();
+        return result;
+    }
 }

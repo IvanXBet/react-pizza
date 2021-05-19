@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Redirect, Link} from 'react-router-dom';
+import validator from 'validator'; 
+
+
 import CheckoutItem from '../checkoutItem/checkoutItem';
 import {readyOrder} from '../../actions';
 import backIcon from '../../assets/img/cart-icon-back.svg';
@@ -30,6 +33,21 @@ class Checkout extends Component {
         const {order, totalPrice, totalQuantity } = this.props;
         
         const {adres, phone, dopInfo} = this.state;
+
+
+        const formattedNumber = phone.toString().replace(/\D/g, '').replace(/^7/, '8');
+
+        if(validator.isMobilePhone(phone.toString(), ['ru-RU'])){
+
+        } else {
+            this.message('Номер телефона введён не верно')
+            return;
+        }
+
+        if(validator.isEmpty(adres.toString(), ['ru-RU'])){
+            this.message('Адрес не введён')
+            return;
+        }
         
         const auth = JSON.parse(localStorage.getItem('userData'));
         const totalPricePlus = totalPrice + 99;
@@ -40,7 +58,7 @@ class Checkout extends Component {
             userId: auth.userId,
             orderDate: today,
             orderAddress: adres,
-            phone: phone,
+            phone: formattedNumber,
             dopInfo: dopInfo,
             status: 'Обработка',
         })
@@ -52,13 +70,9 @@ class Checkout extends Component {
                 }
 
             })
-
-        
-           
-
-        
-        
     }
+
+
     changeInput = event => {
         this.setState({[event.target.name]: event.target.value})
     }
@@ -76,7 +90,7 @@ class Checkout extends Component {
                                 <div className='checkout__inputs'>
                                     <input placeholder='Адрес доставки' required onChange={this.changeInput} type="text" name="adres"></input>
                                     <input placeholder='Номер телефона' required onChange={this.changeInput} type="tel" name="phone"></input>
-                                    <textarea placeholder='Дополнительная информация' required name='dopInfo' onChange={this.changeInput} className='checkout__inputTextarea'></textarea>
+                                    <textarea placeholder='Дополнительная информация (например: Номер парадной)' required name='dopInfo' onChange={this.changeInput} className='checkout__inputTextarea'></textarea>
                                 </div>
                             </form>
                             <div className='checkout__buttons'>

@@ -1,0 +1,17 @@
+.cardWorker {
+    margin-top: 20px;
+    padding: 0px 20px;
+    padding-top: 15px;
+    width: 640px;
+    min-height: 300px;
+    border-radius: 30px;
+    background: #dedede;
+    &__buttons {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__dop {
+        margin-top: 15px;
+    }
+}

@@ -44,4 +44,16 @@ router.post('/order',
 
 })
 
+
+router.get('/allOrders', async(req, res) => {
+    try {
+        Order.find()
+        .then(Order => res.json(Order))
+        .catch(err => res.status(400).json('Error: ' + err));
+    }catch (e) {
+        res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
+    } 
+})
+
+
 module.exports = router

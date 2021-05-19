@@ -25,10 +25,17 @@ const dateBday = (orderItem) => {
     return str;
 }
 
-const OrderItemProfil = ({orderItem}) => {
+const btnDelit = (status, id, delitOrder) => {
+    if(status === 'Обработка'){
+        return <div onClick={()=>delitOrder(id)} className='orderItemProfil__delit'>Отменить</div>
+    } 
+}
+
+const OrderItemProfil = ({orderItem, delitOrder}) => {
     
     return (
         <div className='orderItemProfil'>
+            {btnDelit(orderItem.status, orderItem._id, delitOrder)}
             <div className='orderItemProfil__first'>
                 <div className='orderItemProfil__text'>
                     <h2 className='orderItemProfil__name'>Заказ с ID: <span>{orderItem._id}</span></h2>
@@ -39,7 +46,7 @@ const OrderItemProfil = ({orderItem}) => {
             <div className='orderItemProfil__second'>
                 <div className='orderItemProfil__quantity'>{orderItem.totalQuantity} шт.</div>
                 <div className='orderItemProfil__quantity'>{orderItem.totalPrice} ₽</div>
-                <div className='orderItemProfil__quantity orderItemProfil__status_3'>{orderItem.status}</div>
+                <div className='orderItemProfil__quantity '>{orderItem.status}</div>
             </div>
         </div>
     )

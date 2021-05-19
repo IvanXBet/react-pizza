@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
-
+import {connect, ReactReduxContext} from 'react-redux';
+import validator from 'validator'; 
 import getUser from '../../services/getUser-service';
 
 import OrderItemProfil from '../orderItemProfil/orderItemProfil';
-import InputProfil from '../inputProfil/inputProfil';
 import Spinner from '../spinner/spinner';
 import Error from '../error/error';
 
@@ -48,7 +47,6 @@ class Profil extends Component {
             
         })
         .catch(error => this.setState({error: true}))
-
         
     }
 
@@ -71,26 +69,69 @@ class Profil extends Component {
     }
 
     setInput = async (e, name) => {
-        await this.setState((state, item) => ({user: {...state.user, [e.target.name]: e.target.value}}))
-       
+        await this.setState(state => ({user: {...state.user, [e.target.name]: e.target.value}}))
     }
 
-    changeInput = event => {
-        this.setState({[event.target.name]: event.target.value})
+     changeInput  = async (event) =>  {
+        await this.setState({[event.target.name]: event.target.value})
     }
+    
 
     changeProfil = async (e) => {
         e.preventDefault();
+
+        const formattedNumber = this.state.user.phone.toString().replace(/\D/g, '').replace(/^7/, '8');
+        await this.setState(state => ({user: {...state.user, phone: formattedNumber}}))
+        
+
+        if(validator.isMobilePhone(this.state.user.phone.toString(), ['ru-RU'])){
+
+        } else {
+            this.message('Номер телефона введён не верно')
+            return;
+        }
+        if(validator.isEmail(this.state.user.email)){
+
+        } else {
+            this.message('Почта введена не верно')
+            return;
+        }
+
+        if(validator.isEmpty(this.state.user.name.toString(), ['ru-RU'])){
+            this.message('Имя не введино')
+            return;
+        }
+        
         await User.changeUserProfil(this.state.user)
         .then(res => {
-            if(res.message === 'Некорректный данные при регистрации') {
+            console.log(res)
+            if(res.status === 400) {
                 this.message(res.message)  
                 
             } else {
-                console.log(res)
+                this.message('Изменения применены')
                 // window.location.reload();
             }
         })
+        
+    }
+
+    delitOrder = async (orderId) => {
+        console.log(`удаление заказа ${orderId}`)
+        await User.delitOrder({orderId})
+        .then(res => {
+            console.log(res)
+            if(res.message.ok === 1){
+                
+            this.message('Заказ отменён')
+            window.location.reload();
+            } else {
+                this.message('Ошибка удаления зказа')
+            }
+        })
+
+
+        
     }
 
     logout = () => {
@@ -105,7 +146,7 @@ class Profil extends Component {
 
         const spinner = loading ? <Spinner/> : null;
         const errorMenu = error ? <Error/> : null;
-        const content = !(loading || error) ? <View changeProfil={this.changeProfil} setInput={this.setInput} user={this.state.user} orders={newOrder} logout={this.logout} strBday={strBday} changeInput={this.changeInput}/> : null;
+        const content = !(loading || error) ? <View  changeProfil={this.changeProfil} setInput={this.setInput} user={this.state.user} orders={newOrder} logout={this.logout} strBday={strBday} changeInput={this.changeInput} delitOrder={this.delitOrder}/> : null;
 
         return (
             <>
@@ -124,7 +165,7 @@ class Profil extends Component {
 
 }
 
-const View = ({user, orders, logout, strBday, setInput, changeProfil}) => {
+const View = ({user, orders, logout, strBday, setInput, changeProfil, delitOrder}) => {
     return(
         <div className='profil__block'>
         <div className='profil__info'>
@@ -142,7 +183,8 @@ const View = ({user, orders, logout, strBday, setInput, changeProfil}) => {
                     <div className='inputProfil'> 
                         <label>Телефона</label>
                         <div className='inputProfil__input'>
-                            <input name='phone' required onChange={setInput} value={user.phone}></input> 
+                            <input name='phone' type='tel' required onChange={setInput} value={user.phone}></input>
+                             
                         </div>
                     </div>
 
@@ -173,7 +215,8 @@ const View = ({user, orders, logout, strBday, setInput, changeProfil}) => {
 
             {
                 orders.map(orderItem => {
-                    return  <OrderItemProfil orderItem={orderItem}/>
+                        return  <OrderItemProfil delitOrder={delitOrder}  orderItem={orderItem}/>
+                    
                 })
             }
             
