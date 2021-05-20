@@ -6,6 +6,7 @@ import CheckoutPage from '../pages/CheckoutPage';
 import ReadyPage from '../pages/ReadyPage';
 import AdminPage from '../pages/AdminPage';
 import WorkerPage from '../pages/WorkerPage';
+import AdminAuth from '../admin-auth/admin-auth';
 import {Switch, Route} from 'react-router-dom';
 import { useDispatch, useSelector, connect } from 'react-redux';
 import {useRealodOrder} from '../../hooks/relodOrder.hook';
@@ -68,7 +69,8 @@ class App extends Component {
 						<Route path='/checkout' exact><CheckoutPage/></Route>
 						<Route path='/ready' exact><ReadyPage/></Route>
 						<Route path='/admin' exact> <AdminPage/> </Route>
-						<Route path='/worker' exact> <WorkerPage/> </Route>
+						<Route path='/worker' > <WorkerPage/> </Route>
+						<Route path='/authadmin' exact><AdminAuth/></Route>
 						<Route exact><MainPage/></Route>
 					</Switch>
 				</div>

@@ -37,7 +37,7 @@ class Profil extends Component {
         const userData = JSON.parse(localStorage.getItem('userData'));
         await User.getUserProfil({userId: userData.userId})
         .then(res =>{  this.setState({
-                orders: res.orders,
+                orders: res.orders.reverse(),
                 user: res.candidate,
                 loading: false,
             })
@@ -85,11 +85,13 @@ class Profil extends Component {
         
 
         if(validator.isMobilePhone(this.state.user.phone.toString(), ['ru-RU'])){
-
+            console.log('true')
         } else {
+            console.log('false')
             this.message('Номер телефона введён не верно')
             return;
         }
+
         if(validator.isEmail(this.state.user.email)){
 
         } else {
@@ -139,13 +141,12 @@ class Profil extends Component {
 
     
     render() {
-        const {loading, error} = this.state
+        const {loading, error, orders} = this.state
         const strBday = this.dateBday();
-        const newOrder = this.state.orders.reverse()
 
         const spinner = loading ? <Spinner/> : null;
         const errorMenu = error ? <Error/> : null;
-        const content = !(loading || error) ? <View  changeProfil={this.changeProfil} setInput={this.setInput} user={this.state.user} orders={newOrder} logout={this.logout} strBday={strBday} changeInput={this.changeInput} delitOrder={this.delitOrder}/> : null;
+        const content = !(loading || error) ? <View  changeProfil={this.changeProfil} setInput={this.setInput} user={this.state.user} orders={orders} logout={this.logout} strBday={strBday} changeInput={this.changeInput} delitOrder={this.delitOrder}/> : null;
 
         return (
             <>
@@ -173,7 +174,7 @@ const View = ({user, orders, logout, strBday, setInput, changeProfil, delitOrder
                     <div className='inputProfil'> 
                         <label>Имя</label>
                         <div className='inputProfil__input'>
-                            <input name='name' required onChange={setInput} value={user.name}></input> 
+                            <input name='name' maxLength="9" required onChange={setInput} value={user.name}></input> 
                         </div>
                     </div>
 
@@ -182,7 +183,7 @@ const View = ({user, orders, logout, strBday, setInput, changeProfil, delitOrder
                     <div className='inputProfil'> 
                         <label>Телефона</label>
                         <div className='inputProfil__input'>
-                            <input name='phone' type='tel' required onChange={setInput} value={user.phone}></input>
+                            <input name='phone' maxLength="20" type='tel' required onChange={setInput} value={user.phone}></input>
                              
                         </div>
                     </div>
@@ -197,7 +198,7 @@ const View = ({user, orders, logout, strBday, setInput, changeProfil, delitOrder
                     <div className='inputProfil'> 
                         <label>Почта</label>
                         <div className='inputProfil__input'>
-                            <input name='email' type='email' required onChange={setInput} value={user.email}></input> 
+                            <input name='email' maxLength="40" type='email' required onChange={setInput} value={user.email}></input> 
                         </div>
                     </div>
 

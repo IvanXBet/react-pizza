@@ -31,7 +31,9 @@
         align-items: center;
         height: 45px;
         width: 700px;
-
+        &_admin {
+            width: 910px;
+        }
         li {
             
             &:hover {

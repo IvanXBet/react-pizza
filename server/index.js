@@ -20,6 +20,7 @@ app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/api/data', require('./routes/menu.routes'))
 app.use('/api/data', require('./routes/order.routs'))
 app.use('/api/data', require('./routes/userProfil.routes'))
+app.use('/api/data', require('./routes/admin.routes'))
 
 //server static assets in pord
 

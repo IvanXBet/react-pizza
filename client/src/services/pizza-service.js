@@ -1,8 +1,7 @@
 export default class PizzaServis {
-    url = '/api/data/menu';
-
+    
     getMenuItems = async () => {
-        const response = await fetch(this.url, {
+        const response = await fetch('/api/data/menu', {
             mode: 'no-cors',
             method: "GET",
             headers: {

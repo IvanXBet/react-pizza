@@ -1,0 +1,22 @@
+.authAdmin{
+    width: 100%;
+    background-color: $orange;
+    height: 100vh;
+    padding-top: 60px;
+    position: relative;
+    &__block {
+        width: 155px;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+    &__input {
+        padding-top: 5px;
+        width: 57px;
+        input {
+            border: 0px
+        }
+    }
+}

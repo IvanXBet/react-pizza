@@ -15,7 +15,6 @@ class CardWorker extends Component {
 
     async componentDidMount() {
         await this.setState({order: this.props.order})
-        console.log(this.state)
     }
 
     onClickChange = async (id, status) => {
@@ -24,7 +23,7 @@ class CardWorker extends Component {
             id: id,
             status: status
         })
-        .then(res => console.log(res))
+        .then(res => {})
     }
 
     btnCompletedActiv = (order) => {

@@ -35,10 +35,11 @@ router.post('/updateProfil',[
 		// }
 
         const {_id, name, email, phone} = req.body;
+        console.log(req.body)
 
         const candidate = await User.findOne({ email })
 
-		if (candidate) {
+		if (candidate != null && candidate._id != _id) {
 			return res.status(400).json({ message: 'С такой почтой уже создан аккаунт', status: 400 })
 		}
 
