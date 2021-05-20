@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Redirect, Link} from 'react-router-dom';
-import validator from 'validator'; 
+import validator from 'validator';
 
 
 import CheckoutItem from '../checkoutItem/checkoutItem';
@@ -70,6 +70,8 @@ class Checkout extends Component {
                 }
 
             })
+
+            
     }
 
 

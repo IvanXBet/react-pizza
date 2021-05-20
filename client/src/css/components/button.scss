@@ -385,5 +385,9 @@
         height: 40px;
         width: 200px;
         background-color: #1CBC19;
+        &_no {
+            background-color: #c4c4c4;
+            color: grey;
+        }
     }
 }

@@ -31,6 +31,15 @@ const btnDelit = (status, id, delitOrder) => {
     } 
 }
 
+const statusColor = (status) => {
+    if(status === 'Обработка'){
+        return <div className='orderItemProfil__status orderItemProfil__status_2 '>{status}</div>
+    } else if (status === 'Приготовленно') {
+        return <div className='orderItemProfil__quantity orderItemProfil__status_1'>{status}</div>
+    } else return <div className='orderItemProfil__quantity orderItemProfil__status_3'>{status}</div>
+    
+}
+
 const OrderItemProfil = ({orderItem, delitOrder}) => {
     
     return (
@@ -46,7 +55,9 @@ const OrderItemProfil = ({orderItem, delitOrder}) => {
             <div className='orderItemProfil__second'>
                 <div className='orderItemProfil__quantity'>{orderItem.totalQuantity} шт.</div>
                 <div className='orderItemProfil__quantity'>{orderItem.totalPrice} ₽</div>
-                <div className='orderItemProfil__quantity '>{orderItem.status}</div>
+                {
+                    statusColor(orderItem.status)
+                }
             </div>
         </div>
     )

@@ -55,11 +55,12 @@ router.get('/allOrders', async(req, res) => {
     } 
 })
 
-router.get('/changestatus', async(req, res) => {
+router.post('/changestatus', async(req, res) => {
     try {
-        const {_id, status} = req.body;
-        consol.log(req.body)
-        const result = await Order.updateMany(
+        
+        const {id, status} = req.body;
+        
+        const result = await Order.updateOne(
             {   
                 '_id': id,
                     
