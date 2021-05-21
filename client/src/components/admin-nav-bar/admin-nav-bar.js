@@ -19,10 +19,6 @@ const AdminNavBar = () =>  {
                             <li className='navbar__item'> 
                                 <Link to={'/worker/addcontent'}>Добавление контента</Link>
                             </li>
-
-                            <li className='navbar__item'> 
-                                <Link to={'/worker/addworker'}>Регистрация нового рабочего</Link>
-                            </li>
                         </ul>
                     </div>
                 </div>
