@@ -5,7 +5,8 @@
     width: 640px;
     min-height: 300px;
     border-radius: 30px;
-    background: #dedede;
+    border: 2px solid $orange;
+    // background: #dedede;
     &__buttons {
         margin-top: 10px;
         display: flex;
@@ -21,6 +22,7 @@
         margin-top: 10px;
     }
     &_completed {
-        background-color: green;
+        border: 0;
+        background: #dedede;
     }
 }

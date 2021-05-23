@@ -122,12 +122,12 @@ class Card extends Component  {
 
         const classImg = img ? `card__img card__img_active ` : 'card__img';
         const classInfo = img ? 'card__info' : 'card__info  card__info_active';
-        
+
         return (
             <div className = 'card'>
                 <div onMouseOver={this.changeInfoMouseover} onMouseOut={this.changeInfoMouseout}  className='card__top'>
                     <div className={classImg}>
-                        <img src= {url}></img>
+                        <img src= {require(`../../assets/img-pizza-card/${url}`).default}></img>
                     </div>
                     <div className={classInfo}>
                         <div className='card__ingredients'>

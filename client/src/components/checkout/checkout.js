@@ -63,7 +63,6 @@ class Checkout extends Component {
             status: 'Обработка',
         })
             .then(async result  =>   {
-                this.message(result.message)
                 if(result.message === "Заказ оформлен"){
                   await  this.props.readyOrder(result.id)
                   await  this.setState({ready: true})

@@ -1,0 +1,89 @@
+.addcontent {
+    padding-top: 77px;
+    &__block{
+        margin: 0 auto;
+        width: 1300px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {
+        align-self: flex-start;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 38px;
+        letter-spacing: 0.01em;
+    }
+    &__line {
+        width: 1px;
+        height: 550px;
+
+        background: #EB5A1E;
+    }
+    &__add {
+        width: 470px;
+        display: flex;
+        flex-direction: column;
+        align-items:flex-end;
+    }
+    &__inputs {
+        margin-top: 20px;
+        
+    }
+    &__input {
+        margin-top: 25px;
+        display: flex;
+        label {
+            display: block;
+            width: 200px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0.01em;
+        }
+        input {
+            width: 217px;
+            height: 30px;
+            border: 0px;
+            background: #dedede;
+            border-radius: 5px;
+            padding-left: 15px;
+            &:focus {
+                background: #C4C4C4;
+            }
+        }
+    }
+    &__inputTextarea {
+        margin-top: 25px;
+        label {
+            display: block;
+            width: 275px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0.01em;
+        }
+        textarea {
+            margin-top: 11px;
+            border: 0px;
+            resize: none;
+            width: 417px;
+            height: 124px;
+            background: #dedede;
+            border-radius: 5px;
+            padding: 15px;
+            &:focus {
+                background: #C4C4C4;
+            }
+        }
+    }
+    
+    &__remove {
+        width: 470px;
+        display: flex;
+        flex-direction: column;
+        align-items:flex-end;
+    }
+}

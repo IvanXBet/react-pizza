@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import logoSvg from '../../assets/img/logo-pizza.svg';
 
 const HeaderLogo = () => {
+    
     return (
         <Link to={'/'} className="header__logo">
             

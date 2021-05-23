@@ -130,9 +130,6 @@ class Profil extends Component {
                 this.message('Ошибка удаления зказа')
             }
         })
-
-
-        
     }
 
     logout = () => {

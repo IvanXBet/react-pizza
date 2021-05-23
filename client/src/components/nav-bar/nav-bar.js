@@ -33,9 +33,6 @@ const NavBar = () =>  {
                                 <Link to={'/'}> <i class="fas fa-pizza-slice"></i> Пицца </Link>
                             </li>
 
-                            <li className='navbar__item'> 
-                                <Link to={'/'}> <i class="fas fa-glass-whiskey"></i> Напитки</Link>
-                            </li>
 
                             <li className='navbar__item'> 
                                 <Link to={'/delivery'}> <i class="fas fa-truck"></i> Доставка</Link>

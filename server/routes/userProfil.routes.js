@@ -35,7 +35,6 @@ router.post('/updateProfil',[
 		// }
 
         const {_id, name, email, phone} = req.body;
-        console.log(req.body)
 
         const candidate = await User.findOne({ email })
 

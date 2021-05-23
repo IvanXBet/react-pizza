@@ -22,7 +22,7 @@ const router = Router()
 		return res.status(400).json({
 			errors: errors.array(),
 			message: 'Некорректный данные при регистрации'
-		})
+			})
 		}
 
 		const {email, password, name, phone, bday} = req.body

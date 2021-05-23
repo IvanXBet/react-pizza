@@ -15,6 +15,11 @@ class WorkerPanel extends Component {
         .then(res => this.setState({orders: res.reverse()}))
     }
 
+    async componentWillUpdate() {
+        await services.getAllOrders()
+        .then(res => this.setState({orders: res.reverse()}))
+    }
+
     render() {
         return(
             <>

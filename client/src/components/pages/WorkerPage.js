@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import AdminNavBar from '../../components/admin-nav-bar/admin-nav-bar';
 import Header from '../header/header.js';
-import WorkerPanel from '../worrker-panel/worker-panel'
+import WorkerPanel from '../worrker-panel/worker-panel';
+import AddContent from '../add-content/add-content';
 
 
 class WorkerPage extends Component {    
@@ -15,16 +16,9 @@ class WorkerPage extends Component {
             authAdmin = {auth: false}
         }
         
-        console.log(authAdmin.auth)
-        const b = authAdmin.auth ? true : false
-        console.log(b)
-
-
         if(authAdmin.auth === true) {
-            console.log('null')
             return null
         } else {
-            console.log('red')
             return <Redirect to={"/authadmin"} />
         }
     }
@@ -41,7 +35,7 @@ class WorkerPage extends Component {
                     <Route path='/' exact><WorkerPanel/></Route>
                     <Route path='/worker/orders' exact><WorkerPanel/></Route>
                     <Route path='/worker/stats' exact><WorkerPanel/></Route>
-                    {/* <Route path='/worker/addcontent' exact><WorkerPanel/></Route> */}
+                    <Route path='/worker/addcontent' exact><AddContent/></Route>
                     
                     
                     <Route exact> <WorkerPanel/></Route>

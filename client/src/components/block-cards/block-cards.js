@@ -83,7 +83,7 @@ const View = ({filterItems, newItemOrder, changeQuantityInOrder}) => {
                 <div className='content__cards'>
                     {
                         filterItems.map(menuItem => {
-                            return <Card key={menuItem.id} changeQuantityInOrder= {changeQuantityInOrder} newItemOrder={newItemOrder}  menuItem = {menuItem}/>
+                            return <Card key={menuItem._id} changeQuantityInOrder= {changeQuantityInOrder} newItemOrder={newItemOrder}  menuItem = {menuItem}/>
                         })
                     }
                 </div>
