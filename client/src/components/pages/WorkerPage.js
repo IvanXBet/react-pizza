@@ -3,6 +3,7 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 import AdminNavBar from '../../components/admin-nav-bar/admin-nav-bar';
 import Header from '../header/header.js';
 import WorkerPanel from '../worrker-panel/worker-panel';
+import StatBlock from '../stat-block/stat-block';
 import AddContent from '../add-content/add-content';
 
 
@@ -34,7 +35,7 @@ class WorkerPage extends Component {
                 <Switch>
                     <Route path='/' exact><WorkerPanel/></Route>
                     <Route path='/worker/orders' exact><WorkerPanel/></Route>
-                    <Route path='/worker/stats' exact><WorkerPanel/></Route>
+                    <Route path='/worker/stat' exact><StatBlock/></Route>
                     <Route path='/worker/addcontent' exact><AddContent/></Route>
                     
                     

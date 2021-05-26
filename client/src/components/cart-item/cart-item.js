@@ -46,7 +46,7 @@ class CartItem extends Component  {
         return (
         <div className='cartItem'>
             <div className='cartItem__first'>
-                <img className='cartItem__img' src={url} alt="icon pizza"/>
+                <img className='cartItem__img' src={require(`../../assets/img-pizza-card/${url}`).default} alt="icon pizza"/>
                 <div className='cartItem__text'>
                     <h2 className='cartItem__name'>{title}</h2>
                     <div className='cartItem__descr'>{activeDough} тесто, {activeDiameter} см.</div>

@@ -11,6 +11,7 @@ class AddContent extends Component {
         price: '',
         category: '',
         ingredients: [],
+        delName:'',
     }
 
     message = (text) => {
@@ -34,7 +35,7 @@ class AddContent extends Component {
     onAddCard = async () => {
         //гавайская.jpeg
         let {url, name, price, category, ingredients} = this.state
-        name = name[0].toUpperCase() + name.slice(1);
+        name = name[0].toUpperCase() + name.slice(1).toLowerCase();
         category = category.toLowerCase()
         ingredients = ingredients.map(item => {return item.toLowerCase()})
         const  regex = new RegExp("(.*?)\.(jpg|jpeg)$");
@@ -50,8 +51,19 @@ class AddContent extends Component {
         }
         category = category.toLowerCase()
 
-        console.log({url, name, price, category, ingredients})
+       
         service.addCard({url, name, price, category, ingredients})
+            .then(res => this.message(res.message))
+    }
+
+    delCard = async () => {
+        let {delName} = this.state;
+        delName = delName[0].toUpperCase() + delName.slice(1).toLowerCase();
+        if(delName===''){
+            this.message('Пустое поле')
+            return;
+        }
+        service.delCard({delName})
             .then(res => this.message(res.message))
     }
 
@@ -100,10 +112,10 @@ class AddContent extends Component {
                                 <div className='addcontent__title'>Удаление карточки</div>
                                 <div className='addcontent__inputs'>
                                     <div className='addcontent__input'>
-                                        <label>Название пиццы</label> <input/>
+                                        <label>Название пиццы</label> <input name='delName' onChange={this.setInput}/>
                                     </div>
                                 </div>
-                                <div className='button button_addContent'>Удалить</div>
+                                <div className='button button_addContent'  onClick={this.delCard}>Удалить</div>
                             </div>
                         </div>
                     </div>

@@ -35,4 +35,18 @@ export default class PizzaServis {
         return result;
         
     }
+
+    delCard = async (body) => {
+        console.log(body)
+        const response = await fetch('/api/data/delcard', {
+            method: "POST",
+            body: JSON.stringify(body),
+            headers: {
+                 "Content-Type": "application/json"
+            }
+        })
+
+        const result = await response.json();
+        return result;
+    }
 }

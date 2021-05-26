@@ -13,7 +13,7 @@ const AdminNavBar = () =>  {
                             </li>
 
                             <li className='navbar__item'> 
-                                <Link to={'/worker/stats'}>Статистика</Link>
+                                <Link to={'/worker/stat'}>Статистика</Link>
                             </li>
 
                             <li className='navbar__item'> 

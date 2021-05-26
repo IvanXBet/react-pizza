@@ -32,8 +32,6 @@ class WorkerPanel extends Component {
                                     return <CardWorker order={order}/>
                                 })
                             }
-                            
-                            
                         </div>
                     </div>
                 </div>

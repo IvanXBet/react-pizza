@@ -28,4 +28,22 @@ router.post('/addcard', async(req, res) => {
     }
 })
 
+router.post('/delcard', async(req, res) => {
+    try {
+        const {delName} = req.body
+
+        const pizza = await menuItem.findOne({ title: delName })
+        if (pizza === null) {
+            return res.status(400).json({ message: 'Такой пиццы нет'})
+        }
+
+        await menuItem.deleteOne({ title: delName})
+
+        res.status(200).json({ message: 'Пеперация прошла успешно' })
+        
+    } catch (e) {
+        res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
+    }
+})
+
 module.exports = router
