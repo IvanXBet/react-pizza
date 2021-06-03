@@ -21,6 +21,7 @@ class ButtonCart extends Component {
 					<i class="fas fa-shopping-cart"></i>
 				</div>
 				<span className="button__cart-text" >{totalQuantity}</span>
+				<span className="button__cart-mobail" >Корзина</span>
 			</Link>
 		);
 	}
