@@ -1,5 +1,7 @@
 const {Schema, model, Types} = require("mongoose")
 
+
+
 const Order = new Schema({
     orderItems: {type: Array, required: true},
     totalPrice: {type: Number, required: true},
