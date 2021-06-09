@@ -1,0 +1,41 @@
+.aboutus {
+    padding-top: 70px;
+    &__title {
+        margin-left: 60px;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 38px;
+        letter-spacing: 0.01em;
+
+        color: #000000;
+    }
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        margin-top: 30px;
+        width: 1400px;
+
+    }
+    &__items {
+        ul {
+            margin-left: 50px;
+            list-style-type: circle;
+        }
+        li {
+            margin-top: 10px;
+        }
+    }
+    &__item {
+        font-size: 20px;
+        margin-top: 15px;
+       span {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        /* identical to box height */
+
+        letter-spacing: 0.01em;
+       }
+    }
+}

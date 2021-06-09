@@ -9,6 +9,16 @@
 
         color: #000000;
     }
+    &__block {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__texts {
+        width: 900px;
+    }
+    &__map {
+        margin-top: 35px;
+    }
     &__text {
         margin-top: 35px;
         font-style: normal;
